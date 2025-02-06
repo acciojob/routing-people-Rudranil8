@@ -12,20 +12,22 @@
 
 // export default App
 
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import UserList from "./UserList";
-import UserDetails from "./UserDetails";
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import UserList from "./UserList";
+// import UserDetails from "./UserDetails";
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './Home';
+import UserDetails from './UserDetails';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<UserList />} />
-        <Route path="/users/:id" element={<UserDetails />} />
-      </Routes>
+      <Route exact path="/" component={Home} />
+      <Route path="/user/:id" component={UserDetails} />
     </Router>
   );
-}
+};
 
 export default App;
